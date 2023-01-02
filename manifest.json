@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "AngelList Job Extension",
+    "description": "A Chrome extension that scrapes AngelList jobs",
+    "version": "1.0",
+    "permissions": [
+        "https://angel.co/jobs*",
+        "activeTab"
+    ],
+    "background": {
+        "scripts": [
+            "background.ts"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://angel.co/jobs*"
+            ],
+            "js": [
+                "content.ts"
+            ]
+        }
+    ],
+    "page_action": {
+        "default_title": "Scrape AngelList jobs"
+    }
+}
